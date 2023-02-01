@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple to-do list</title>
+</head>
+<body>
+    <h1>Welcome to your TO-DO list</h1>
+    <h2>How to use to-do list</h2>
+    <p>Type the text of your task in the field below. After this, your task will be add to the task list. If you have done your task just click on it and task will be marked as complete and gone.</p>
+    <h2>Your tasks:</h2>
+    <div>
+        <ul id="task-list">
+        </ul>
+    </div>
+    <form>
+        <input id="new-task-text" type="text" placeholder="Text of your task">
+        <button type="button" onclick="getNewTask()">Create new task</button>
+    </form>
+    <script src="todo.js"></script>
+</body>
+</html>
