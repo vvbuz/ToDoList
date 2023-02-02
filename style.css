@@ -1,0 +1,36 @@
+body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+li {
+    margin-bottom: 5px;
+    width: 210px;
+    overflow-wrap: anywhere;
+}
+li div {
+    font-size: 14px;
+    text-align: center;
+}
+.task-btn {
+    padding: 2px 5px;
+    height: 15px;
+    border-radius: 2px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    float: right;
+}
+.edit-task-btn {
+    background-color: rgb(157, 234, 157);
+}
+.edit-task-btn:hover {
+    background-color: rgb(131, 230, 131);
+}
+.remove-task-btn {
+    background-color: rgb(234, 157, 157);
+}
+.remove-task-btn:hover {
+    background-color: rgb(230, 126, 126);
+}
+.completed-task {
+    text-decoration: line-through;
+}
