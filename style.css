@@ -19,6 +19,10 @@ li div {
     cursor: pointer;
     float: right;
 }
+.edit-task {
+    display: flex;
+    width: 500px;
+}
 .edit-task-btn {
     background-color: rgb(157, 234, 157);
 }

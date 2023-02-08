@@ -21,7 +21,7 @@ function removeTask(taskToDelete) {
 function editTask(taskToEdit) {
     const editField = '<input type="text" value="' + taskToEdit.innerText.slice(0, -11) + '">';
     const saveEditBtn = '<button type="button" onclick="saveEditedText(this.parentElement)" style="margin-left: 5px;">Save</button>';
-    taskToEdit.innerHTML = '<div style="display:flex;">' + editField + saveEditBtn; + '</div>';
+    taskToEdit.innerHTML = '<div class="edit-task">' + editField + saveEditBtn; + '</div>';
 }
 
 function saveEditedText (saveBtn) {
