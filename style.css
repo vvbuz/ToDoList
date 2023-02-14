@@ -19,6 +19,10 @@ li div {
     cursor: pointer;
     float: right;
 }
+.edit-task {
+    display: flex;
+    width: 500px;
+}
 .edit-task-btn {
     background-color: rgb(157, 234, 157);
 }
@@ -33,4 +37,9 @@ li div {
 }
 .completed-task {
     text-decoration: line-through;
+}
+.task {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 50% 20% 25%;
 }

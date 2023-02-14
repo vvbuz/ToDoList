@@ -6,7 +6,7 @@ function getNewTask() {
         alert('Fill the task text field');
     } else {
         document.getElementById('task-list').appendChild(document.createElement("li"));
-        document.getElementById('task-list').lastElementChild.innerHTML = document.getElementById('new-task-text').value + removeTaskBtn + editTaskBtn;
+        document.getElementById('task-list').lastElementChild.innerHTML = '<div class="task">' + document.getElementById('new-task-text').value + editTaskBtn + removeTaskBtn + '</div>';
         document.getElementById('new-task-text').value = '';
     }
 }
@@ -14,18 +14,18 @@ function getNewTask() {
 function removeTask(taskToDelete) {
     taskToDelete.classList.add('completed-task');
     setTimeout(() => {
-        taskToDelete.remove();
+        taskToDelete.parentElement.remove();
     }, 800);
 }
 
 function editTask(taskToEdit) {
     const editField = '<input type="text" value="' + taskToEdit.innerText.slice(0, -11) + '">';
     const saveEditBtn = '<button type="button" onclick="saveEditedText(this.parentElement)" style="margin-left: 5px;">Save</button>';
-    taskToEdit.innerHTML = '<div style="display:flex;">' + editField + saveEditBtn; + '</div>';
+    taskToEdit.parentElement.innerHTML = '<div class="edit-task">' + editField + saveEditBtn; + '</div>';
 }
 
 function saveEditedText (saveBtn) {
     const currentTask = saveBtn.parentElement;
     newTaskText = currentTask.querySelector('input').value;
-    currentTask.innerHTML = newTaskText + removeTaskBtn + editTaskBtn;
+    currentTask.innerHTML = '<div class="task">' + newTaskText + editTaskBtn + removeTaskBtn + '</div>';
 }
