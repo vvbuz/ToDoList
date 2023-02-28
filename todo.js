@@ -24,15 +24,25 @@ function removeBtn() {
     return btn;
 }
 
+function pinBtn() {
+    let btn = document.createElement('div');
+    btn.innerText = 'pin';
+    btn.classList.add('task-btn');
+    btn.classList.add('pin-task-btn');
+    btn.setAttribute('onclick', 'pinTask(this.parentElement);');
+    return btn;
+}
+
 function getNewTask() {
-    if (document.getElementById('new-task-text').value === '') {
-        alert('Fill the task text field');
-    } else {
+    if (document.getElementById('new-task-text').value !== '') {
         document.getElementById('task-list').appendChild(document.createElement("li"));
         document.getElementById('task-list').lastElementChild.appendChild(divTask(document.getElementById('new-task-text').value));
         document.getElementById('task-list').lastElementChild.lastElementChild.appendChild(editBtn());
         document.getElementById('task-list').lastElementChild.lastElementChild.appendChild(removeBtn());
+        document.getElementById('task-list').lastElementChild.lastElementChild.appendChild(pinBtn());
         document.getElementById('new-task-text').value = '';
+    } else {
+        alert('Fill the task text field');
     }
 }
 
@@ -78,6 +88,11 @@ function saveEditedText(saveBtn) {
     currentTask.lastElementChild.appendChild(removeBtn());
 }
 
-// Handlers
+function pinTask(taskToPin) {
+    const pinList = document.querySelector('#pin-list');
+    pinList.appendChild(taskToPin.parentElement);
+}
+
 const newTaskBtn = document.getElementById('create-new-task');
 newTaskBtn.addEventListener('click', getNewTask);
+

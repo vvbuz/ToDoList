@@ -4,7 +4,7 @@ body {
 }
 li {
     margin-bottom: 5px;
-    width: 210px;
+    width: 280px;
     overflow-wrap: anywhere;
 }
 li div {
@@ -34,6 +34,11 @@ li div {
 }
 .remove-task-btn:hover {
     background-color: rgb(230, 126, 126);
+}.pin-task-btn {
+    background-color: rgb(232, 223, 156);
+}
+.pin-task-btn:hover {
+    background-color: rgb(231, 217, 112);
 }
 .completed-task {
     text-decoration: line-through;
@@ -41,5 +46,5 @@ li div {
 .task {
     text-align: left;
     display: grid;
-    grid-template-columns: 50% 20% 25%;
+    grid-template-columns: 50% 15% 20% 15%;
 }
